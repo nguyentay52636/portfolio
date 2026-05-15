@@ -1,0 +1,218 @@
+%-------------------------
+% Resume in Latex
+% Author : Matty
+% Based on: https://github.com/jakegut/resume (which was itself based on https://github.com/sb2nov/resume)
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+
+\input{glyphtounicode}
+
+% -------------------- FONT OPTIONS --------------------
+% sans-serif
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% serif
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-1in} % Default was -.5in
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Subsection formatting
+\titleformat{\subsection}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{\hspace{-.15in}}{0em}{}[\color{black}\vspace{-8pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% -------------------- CUSTOM COMMANDS --------------------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\setlength{\footskip}{4.08003pt}
+
+% -------------------- START OF DOCUMENT --------------------
+\begin{document}
+
+% -------------------- HEADING--------------------
+\begin{flushright}
+  % \vspace{-4pt}
+  \color{gray}
+  \item
+  Last Updated on March 7th, 2026
+\end{flushright}
+
+\vspace{-5pt}
+
+\begin{center}
+    \textbf{\Huge \scshape Nguyễn Hồ Phương Tây} \\ \vspace{8pt}
+    \small 
+    \faIcon{github}
+    \href{https://github.com/phuongtay52636}{\underline{github.com/phuongtay52636}} $  $
+    \faIcon{phone}
+    \underline{0846777901} $  $
+    \faIcon{envelope}
+    \href{mailto:[phuongtay52636@gmail.com]}
+    {\underline{[EMAIL_ADDRESS]}}
+\end{center}
+
+% -------------------- EDUCATION --------------------
+\section{Education}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+      {Saigon University (SGU)}{Expected 2027}
+      {B.S. in Information Technology}{Ho Chi Minh City, Vietnam}
+
+  \resumeSubHeadingListEnd
+
+% -------------------- SKILLS --------------------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+
+     \textbf{Languages}{: TypeScript, JavaScript, Go, C\#, Python} \\
+
+     \textbf{Backend}{: .NET, NestJS, Node.js, Gin} \\
+
+     \textbf{Frontend}{: Angular, Next.js, Svelte} \\
+
+     \textbf{Databases}{: MySQL, SQL Server, Redis} \\
+
+     \textbf{Tools}{: Git, GitHub, Docker, Linux, REST API, VS Code}
+
+    }}
+ \end{itemize}
+
+% -------------------- PROJECTS --------------------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+        \resumeProjectHeading
+        {\textbf{Fullstack Task Management System} $|$ \footnotesize\emph{Angular, .NET, MySQL}}{}
+        \resumeItemListStart
+            \resumeItem{Developed a fullstack task management application with Angular frontend and .NET backend}
+            \resumeItem{Implemented RESTful APIs for authentication, task CRUD operations, and user management}
+            \resumeItem{Integrated MySQL database and applied JWT authentication for secure API access}
+        \resumeItemListEnd
+
+        \resumeProjectHeading
+        {\textbf{Real-time Chat Application} $|$ \footnotesize\emph{Node.js, NestJS, Redis, WebSocket}}{}
+        \resumeItemListStart
+            \resumeItem{Built a real-time chat application using WebSocket architecture}
+            \resumeItem{Implemented message broadcasting, room management, and Redis caching}
+            \resumeItem{Designed scalable backend services using NestJS framework}
+        \resumeItemListEnd
+
+        \resumeProjectHeading
+        {\textbf{REST API Service} $|$ \footnotesize\emph{Go, Gin, MySQL}}{}
+        \resumeItemListStart
+            \resumeItem{Developed high-performance REST APIs using Go and Gin framework}
+            \resumeItem{Implemented authentication middleware and structured MVC architecture}
+            \resumeItem{Optimized database queries and API response time}
+        \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+% -------------------- EXPERIENCE --------------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+      \resumeSubheading
+      {Emerge}{2025 -- Present}
+      {Fresher Fullstack Developer}{Ho Chi Minh City}
+      \resumeItemListStart
+        \resumeItem{Developing and maintaining fullstack web applications using Angular and .NET}
+        \resumeItem{Collaborating with backend and frontend teams to implement new features}
+        \resumeItem{Writing REST APIs and integrating database systems}
+      \resumeItemListEnd
+
+      \resumeSubheading
+      {CyberSoft}{2025}
+      {Fullstack Developer Intern}{3 Months}
+      \resumeItemListStart
+        \resumeItem{Built fullstack training projects using Angular and .NET}
+        \resumeItem{Learned enterprise development workflow including Git, code review, and agile practices}
+      \resumeItemListEnd
+
+      \resumeSubheading
+      {Plogg}{2023}
+      {Frontend Developer Intern}{1 Month}
+      \resumeItemListStart
+        \resumeItem{Developed UI components and responsive layouts}
+        \resumeItem{Collaborated with backend APIs and implemented frontend features}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\end{document}
