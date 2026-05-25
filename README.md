@@ -118,7 +118,7 @@ Trong `src/index.html`, tìm và thay các giá trị sau:
 - SEO: thêm meta tags vào `<head>` của `src/index.html`
 - Analytics: thêm Google Analytics vào `src/index.html`
 - Favicon: đặt `favicon.ico` trong `src/` và link trong `<head>`
-- CV PDF: biên dịch `cv.tex` (LaTeX) để có bản CV tải về
+- CV PDF: `src/cv/cv_IT_tay_en.pdf` (bản gốc cũng có tại `cv/cv_IT_tay_en.pdf`). Nút **View CV** và **Xem CV (PDF)** mở PDF trong tab mới.
 
 ## 📱 Browser Support
 
