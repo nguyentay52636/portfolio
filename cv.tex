@@ -24,24 +24,16 @@
 
 \input{glyphtounicode}
 
-% -------------------- FONT OPTIONS --------------------
-% sans-serif
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% serif
-% \usepackage{charter}
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-1in} % Default was -.5in
+\addtolength{\topmargin}{-1in}
 \addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
@@ -50,20 +42,16 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Section formatting
 \titleformat{\section}{
   \vspace{-5pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Subsection formatting
 \titleformat{\subsection}{
   \vspace{-4pt}\scshape\raggedright\large
 }{\hspace{-.15in}}{0em}{}[\color{black}\vspace{-8pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-% -------------------- CUSTOM COMMANDS --------------------
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
@@ -75,13 +63,6 @@
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -102,117 +83,109 @@
 
 \setlength{\footskip}{4.08003pt}
 
-% -------------------- START OF DOCUMENT --------------------
 \begin{document}
 
-% -------------------- HEADING--------------------
-\begin{flushright}
-  % \vspace{-4pt}
-  \color{gray}
-  \item
-  Last Updated on March 7th, 2026
-\end{flushright}
-
-\vspace{-5pt}
-
 \begin{center}
-    \textbf{\Huge \scshape Nguyễn Hồ Phương Tây} \\ \vspace{8pt}
-    \small 
-    \faIcon{github}
-    \href{https://github.com/phuongtay52636}{\underline{github.com/phuongtay52636}} $  $
-    \faIcon{phone}
-    \underline{0846777901} $  $
+    \textbf{\Huge \scshape Nguyễn Hồ Phương Tây} \\ \vspace{4pt}
+    \large Web Developer \\ \vspace{8pt}
+    \small
+    Ho Chi Minh City, Vietnam --- Nguyen Dinh Chieu Street \\
     \faIcon{envelope}
-    \href{mailto:[phuongtay52636@gmail.com]}
-    {\underline{[EMAIL_ADDRESS]}}
+    \href{mailto:phuongtay52636@gmail.com}{\underline{phuongtay52636@gmail.com}} $  $
+    \faIcon{phone}
+    \underline{+84 846 777 901} $  $
+    \faIcon{github}
+    \href{https://github.com/nguyentay52636}{\underline{github.com/nguyentay52636}}
 \end{center}
 
-% -------------------- EDUCATION --------------------
+\section{Summary}
+\small{
+4th-year Software Engineering student with experience building full-stack web applications using modern frontend and backend technologies. Proficient in RESTful APIs, databases, and responsive web development. Strong self-learning, problem-solving, teamwork, and communication skills.
+}
+
 \section{Education}
   \resumeSubHeadingListStart
-  
+
     \resumeSubheading
-      {Saigon University (SGU)}{Expected 2027}
-      {B.S. in Information Technology}{Ho Chi Minh City, Vietnam}
+      {Saigon University (SGU)}{2022 -- 2027}
+      {Software Engineering}{Ho Chi Minh City, Vietnam}
+
+    \resumeSubheading
+      {CyberSoft Academy}{2022 -- 2023}
+      {Full Stack Web Development}{Ho Chi Minh City, Vietnam}
 
   \resumeSubHeadingListEnd
 
-% -------------------- SKILLS --------------------
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-
-     \textbf{Languages}{: TypeScript, JavaScript, Go, C\#, Python} \\
-
-     \textbf{Backend}{: .NET, NestJS, Node.js, Gin} \\
-
-     \textbf{Frontend}{: Angular, Next.js, Svelte} \\
-
-     \textbf{Databases}{: MySQL, SQL Server, Redis} \\
-
-     \textbf{Tools}{: Git, GitHub, Docker, Linux, REST API, VS Code}
-
+     \textbf{Frontend}{: React.js, Next.js, TypeScript, TailwindCSS} \\
+     \textbf{Backend}{: Node.js, Express.js, NestJS} \\
+     \textbf{Databases}{: MongoDB, MySQL, SQL Server} \\
+     \textbf{Tools}{: Git, GitHub, Postman, Swagger, Figma, Canva, Selenium} \\
+     \textbf{Soft Skills}{: Teamwork, Problem-solving, Self-learning, Communication, Positive attitude} \\
+     \textbf{Languages}{: Vietnamese (Native), English (Intermediate)}
     }}
  \end{itemize}
 
-% -------------------- PROJECTS --------------------
 \section{Projects}
     \resumeSubHeadingListStart
 
         \resumeProjectHeading
-        {\textbf{Fullstack Task Management System} $|$ \footnotesize\emph{Angular, .NET, MySQL}}{}
+        {\textbf{Real Estate Service Platform} $|$ \footnotesize\emph{Personal Project · Frontend}}{}
         \resumeItemListStart
-            \resumeItem{Developed a fullstack task management application with Angular frontend and .NET backend}
-            \resumeItem{Implemented RESTful APIs for authentication, task CRUD operations, and user management}
-            \resumeItem{Integrated MySQL database and applied JWT authentication for secure API access}
+            \resumeItem{Platform for listing properties, searching, and customer interaction}
+            \resumeItem{Built a user-friendly, responsive interface}
+            \resumeItem{Technologies: React.js, Vite, Node.js, RESTful API}
         \resumeItemListEnd
 
         \resumeProjectHeading
-        {\textbf{Real-time Chat Application} $|$ \footnotesize\emph{Node.js, NestJS, Redis, WebSocket}}{}
+        {\textbf{Food Platform} $|$ \footnotesize\emph{Course Project · Full Stack}}{}
         \resumeItemListStart
-            \resumeItem{Built a real-time chat application using WebSocket architecture}
-            \resumeItem{Implemented message broadcasting, room management, and Redis caching}
-            \resumeItem{Designed scalable backend services using NestJS framework}
+            \resumeItem{Multilingual food platform supporting ordering and customer interaction}
+            \resumeItem{Technologies: Next.js, NestJS, Node.js, MongoDB, RESTful API}
         \resumeItemListEnd
 
         \resumeProjectHeading
-        {\textbf{REST API Service} $|$ \footnotesize\emph{Go, Gin, MySQL}}{}
+        {\textbf{Restaurant Reservation \& Ordering System} $|$ \footnotesize\emph{Course Project · Full Stack}}{}
         \resumeItemListStart
-            \resumeItem{Developed high-performance REST APIs using Go and Gin framework}
-            \resumeItem{Implemented authentication middleware and structured MVC architecture}
-            \resumeItem{Optimized database queries and API response time}
+            \resumeItem{Supports online table reservations and at-table ordering for restaurants}
+            \resumeItem{Technologies: React.js, Vite, NestJS, Node.js, MySQL, RESTful API}
+        \resumeItemListEnd
+
+        \resumeProjectHeading
+        {\textbf{Supermarket Management System} $|$ \footnotesize\emph{Course Project · Frontend}}{}
+        \resumeItemListStart
+            \resumeItem{Sales management interface based on a mini-supermarket model}
+            \resumeItem{Technologies: React.js, Vite, RESTful API}
         \resumeItemListEnd
 
     \resumeSubHeadingListEnd
-% -------------------- EXPERIENCE --------------------
-\section{Experience}
+
+\section{Achievements \& Certifications}
   \resumeSubHeadingListStart
 
       \resumeSubheading
-      {Emerge}{2025 -- Present}
-      {Fresher Fullstack Developer}{Ho Chi Minh City}
+      {Hackathon — Honorable Mention}{November 2025}
+      {Saigon University}{Ho Chi Minh City}
       \resumeItemListStart
-        \resumeItem{Developing and maintaining fullstack web applications using Angular and .NET}
-        \resumeItem{Collaborating with backend and frontend teams to implement new features}
-        \resumeItem{Writing REST APIs and integrating database systems}
+        \resumeItem{Received Honorable Mention at the Hackathon on November 8, 2025}
       \resumeItemListEnd
 
       \resumeSubheading
-      {CyberSoft}{2025}
-      {Fullstack Developer Intern}{3 Months}
+      {Full Stack Web Development}{2022 -- 2023}
+      {CyberSoft Programming Training Center}{Ho Chi Minh City}
       \resumeItemListStart
-        \resumeItem{Built fullstack training projects using Angular and .NET}
-        \resumeItem{Learned enterprise development workflow including Git, code review, and agile practices}
-      \resumeItemListEnd
-
-      \resumeSubheading
-      {Plogg}{2023}
-      {Frontend Developer Intern}{1 Month}
-      \resumeItemListStart
-        \resumeItem{Developed UI components and responsive layouts}
-        \resumeItem{Collaborated with backend APIs and implemented frontend features}
+        \resumeItem{Completed the Full Stack Web Development course at CyberSoft Academy}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
+
+\section{Links}
+\small{
+\faIcon{github} \href{https://github.com/nguyentay52636}{github.com/nguyentay52636} \\
+\faIcon{linkedin} \href{https://www.linkedin.com/in/nguyentay52636}{linkedin.com/in/nguyentay52636} \\
+\faIcon{globe} \href{https://portfolio-nine-ruby-uap0j35cge.vercel.app/}{portfolio-nine-ruby-uap0j35cge.vercel.app}
+}
 
 \end{document}

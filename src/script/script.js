@@ -31,31 +31,19 @@ function updateThemeIcon(theme) {
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
+function setMobileMenuOpen(isOpen) {
+    navMenu.classList.toggle('active', isOpen);
+    hamburger.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+}
+
 hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    
-    // Animate hamburger
-    const spans = hamburger.querySelectorAll('span');
-    if (navMenu.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(7px, 7px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
-    } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
+    setMobileMenuOpen(!navMenu.classList.contains('active'));
 });
 
 // Close menu when clicking on a link
 document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        const spans = hamburger.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    });
+    link.addEventListener('click', () => setMobileMenuOpen(false));
 });
 
 // ==================== NAVBAR SCROLL EFFECT ====================
@@ -109,23 +97,64 @@ document.querySelectorAll('.reveal').forEach(el => {
     observer.observe(el);
 });
 
-// ==================== TYPING EFFECT (Optional Enhancement) ====================
+// ==================== HERO TYPING EFFECT ====================
 const heroSubtitle = document.querySelector('.hero-subtitle');
-const text = heroSubtitle.textContent;
-heroSubtitle.textContent = '';
+const heroDescription = document.getElementById('heroDescription');
+const heroDescCursor = document.getElementById('heroDescCursor');
 
-let i = 0;
-function typeWriter() {
-    if (i < text.length) {
-        heroSubtitle.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100);
+const subtitleText = heroSubtitle?.textContent.trim() ?? '';
+const descriptionPlain =
+    '4th-year Software Engineering student with hands-on experience building full-stack web applications. Skilled in RESTful APIs, databases, and responsive interfaces with React, Next.js, and Node.js.';
+
+const descriptionRich =
+    '4th-year Software Engineering student with hands-on experience building full-stack web applications. Skilled in <span class="hero-keyword">RESTful APIs</span>, <span class="hero-keyword">databases</span>, and responsive interfaces with <span class="hero-keyword">React</span>, <span class="hero-keyword">Next.js</span>, and <span class="hero-keyword">Node.js</span>.';
+
+function typeText(element, content, speed, onComplete) {
+    if (!element) return;
+    let index = 0;
+    element.textContent = '';
+
+    function tick() {
+        if (index < content.length) {
+            element.textContent += content.charAt(index);
+            index += 1;
+            setTimeout(tick, speed);
+            return;
+        }
+        if (onComplete) onComplete();
     }
+
+    tick();
 }
 
-// Start typing effect after page load
+function startHeroTyping() {
+    if (!heroSubtitle || !heroDescription) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+        heroSubtitle.textContent = subtitleText;
+        heroDescription.innerHTML = descriptionRich;
+        return;
+    }
+
+    heroSubtitle.textContent = '';
+    heroDescription.textContent = '';
+    heroDescCursor?.classList.add('is-active');
+
+    typeText(heroSubtitle, subtitleText, 85, () => {
+        setTimeout(() => {
+            typeText(heroDescription, descriptionPlain, 28, () => {
+                heroDescription.innerHTML = descriptionRich;
+                heroDescCursor?.classList.remove('is-active');
+                heroDescCursor?.classList.add('is-done');
+            });
+        }, 350);
+    });
+}
+
 window.addEventListener('load', () => {
-    setTimeout(typeWriter, 500);
+    setTimeout(startHeroTyping, 500);
 });
 
 // ==================== ACTIVE NAV LINK ====================
